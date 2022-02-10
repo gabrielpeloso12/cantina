@@ -1,0 +1,19 @@
+inherited frmFuncionarioListaU: TfrmFuncionarioListaU
+  Caption = 'Lista De Funcion'#225'rio'
+  ClientHeight = 440
+  ExplicitHeight = 479
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited gbDados: TGroupBox
+    Height = 257
+    inherited dbgDados: TDBGrid
+      Height = 240
+    end
+  end
+  inherited pnControle: TPanel
+    Top = 362
+  end
+  inherited ds: TDataSource
+    DataSet = dmCantina.fdtbFuncionario
+  end
+end

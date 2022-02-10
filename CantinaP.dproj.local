@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/01/10 20:35:19.000.383,=C:\Users\Gabriel Peloso\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/01/10 20:36:10.000.634,C:\Users\Gabriel Peloso\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Projeto_Cantina\principalU.pas</Transaction>
+    <Transaction>2022/01/10 20:36:10.000.634,C:\Users\Gabriel Peloso\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Projeto_Cantina\principalU.dfm</Transaction>
+    <Transaction>2022/01/10 20:36:19.000.082,C:\Users\Gabriel Peloso\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Projeto_Cantina\CantinaP.dproj</Transaction>
+    <Transaction>2022/01/10 21:22:02.000.375,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/10 21:22:59.000.049,D:\Projeto_Cantina\Unit1.dfm=D:\Projeto_Cantina\dmU.dfm</Transaction>
+    <Transaction>2022/01/10 21:22:59.000.049,D:\Projeto_Cantina\Unit1.pas=D:\Projeto_Cantina\dmU.pas</Transaction>
+    <Transaction>2022/01/11 19:54:09.000.480,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/11 19:54:49.000.913,D:\Projeto_Cantina\modeloListaU.pas=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/11 19:54:49.000.913,D:\Projeto_Cantina\modeloListaU.dfm=D:\Projeto_Cantina\Unit1.dfm</Transaction>
+    <Transaction>2022/01/11 20:34:11.000.148,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/11 20:34:50.000.329,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/11 20:35:48.000.681,D:\Projeto_Cantina\clienteListaU.dfm=D:\Projeto_Cantina\Unit1.dfm</Transaction>
+    <Transaction>2022/01/11 20:35:48.000.681,D:\Projeto_Cantina\clienteListaU.pas=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/11 20:45:45.000.745,D:\Projeto_Cantina\clienteListaU.pas=</Transaction>
+    <Transaction>2022/01/11 20:52:42.000.524,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/11 20:54:06.000.460,D:\Projeto_Cantina\Unit1.pas=D:\Projeto_Cantina\clienteListaU.pas</Transaction>
+    <Transaction>2022/01/11 20:54:06.000.460,D:\Projeto_Cantina\Unit1.dfm=D:\Projeto_Cantina\clienteListaU.dfm</Transaction>
+    <Transaction>2022/01/14 20:44:56.000.493,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/14 20:46:11.000.576,D:\Projeto_Cantina\Unit1.dfm=D:\Projeto_Cantina\modeloDadosU.dfm</Transaction>
+    <Transaction>2022/01/14 20:46:11.000.576,D:\Projeto_Cantina\Unit1.pas=D:\Projeto_Cantina\modeloDadosU.pas</Transaction>
+    <Transaction>2022/01/14 21:09:34.000.410,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/14 21:14:17.000.201,D:\Projeto_Cantina\Unit1.pas=D:\Projeto_Cantina\clienteDadosU.pas</Transaction>
+    <Transaction>2022/01/14 21:14:17.000.201,D:\Projeto_Cantina\Unit1.dfm=D:\Projeto_Cantina\clienteDadosU.dfm</Transaction>
+    <Transaction>2022/01/19 20:44:32.000.252,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/19 20:45:53.000.879,D:\Projeto_Cantina\funcionarioListaU.pas=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/19 20:45:53.000.879,D:\Projeto_Cantina\funcionarioListaU.dfm=D:\Projeto_Cantina\Unit1.dfm</Transaction>
+    <Transaction>2022/01/19 21:12:21.000.917,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/19 21:12:45.000.362,D:\Projeto_Cantina\funcionarioDadosU.dfm=D:\Projeto_Cantina\Unit1.dfm</Transaction>
+    <Transaction>2022/01/19 21:12:45.000.362,D:\Projeto_Cantina\funcionarioDadosU.pas=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/19 22:22:25.000.341,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/19 22:23:23.000.280,D:\Projeto_Cantina\Unit1.dfm=D:\Projeto_Cantina\produtoListaU.dfm</Transaction>
+    <Transaction>2022/01/19 22:23:23.000.280,D:\Projeto_Cantina\Unit1.pas=D:\Projeto_Cantina\produtoListaU.pas</Transaction>
+    <Transaction>2022/01/20 21:44:34.000.828,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/20 21:47:46.000.944,D:\Projeto_Cantina\Unit1.dfm=D:\Projeto_Cantina\produtoDadosU.dfm</Transaction>
+    <Transaction>2022/01/20 21:47:46.000.944,D:\Projeto_Cantina\Unit1.pas=D:\Projeto_Cantina\produtoDadosU.pas</Transaction>
+    <Transaction>2022/01/22 14:53:00.000.044,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/22 14:57:06.000.746,D:\Projeto_Cantina\Unit1.pas=D:\Projeto_Cantina\identificaClienteU.pas</Transaction>
+    <Transaction>2022/01/22 14:57:06.000.746,D:\Projeto_Cantina\Unit1.dfm=D:\Projeto_Cantina\identificaClienteU.dfm</Transaction>
+    <Transaction>2022/01/24 20:42:51.000.277,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/24 20:54:39.000.347,D:\Projeto_Cantina\NovoDepositoU.dfm=D:\Projeto_Cantina\Unit1.dfm</Transaction>
+    <Transaction>2022/01/24 20:54:39.000.347,D:\Projeto_Cantina\NovoDepositoU.pas=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/26 20:59:35.000.975,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/26 21:29:46.000.416,D:\Projeto_Cantina\Unit1.dfm=D:\Projeto_Cantina\pontoVendaU.dfm</Transaction>
+    <Transaction>2022/01/26 21:29:46.000.416,D:\Projeto_Cantina\Unit1.pas=D:\Projeto_Cantina\pontoVendaU.pas</Transaction>
+    <Transaction>2022/01/27 20:09:51.000.591,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/27 20:12:47.000.273,D:\Projeto_Cantina\identificaClientePDVU.pas=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/01/27 20:12:47.000.273,D:\Projeto_Cantina\identificaClientePDVU.dfm=D:\Projeto_Cantina\Unit1.dfm</Transaction>
+    <Transaction>2022/02/03 20:32:59.000.505,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/02/03 20:40:53.000.475,D:\Projeto_Cantina\depositaTrocoU.pas=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/02/03 20:40:53.000.475,D:\Projeto_Cantina\depositaTrocoU.dfm=D:\Projeto_Cantina\Unit1.dfm</Transaction>
+    <Transaction>2022/02/05 16:45:42.000.885,=D:\Projeto_Cantina\Unit1.pas</Transaction>
+    <Transaction>2022/02/05 17:02:02.000.721,D:\Projeto_Cantina\Unit1.dfm=D:\Projeto_Cantina\fastReportClienteU.dfm</Transaction>
+    <Transaction>2022/02/05 17:02:02.000.721,D:\Projeto_Cantina\Unit1.pas=D:\Projeto_Cantina\fastReportClienteU.pas</Transaction>
+  </Transactions>
+</BorlandProject>

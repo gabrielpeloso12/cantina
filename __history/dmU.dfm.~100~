@@ -1,0 +1,663 @@
+object dmCantina: TdmCantina
+  OldCreateOrder = False
+  Height = 570
+  Width = 938
+  object fdConexao: TFDConnection
+    Params.Strings = (
+      'User_Name=root'
+      'Password=13101994'
+      'Database=cantina'
+      'Server=LOCALHOST'
+      'DriverID=MySQL')
+    Connected = True
+    LoginPrompt = False
+    Left = 48
+    Top = 16
+  end
+  object fdDriver: TFDPhysMySQLDriverLink
+    VendorLib = 'D:\Projeto_Cantina\libmySQL.dll'
+    Left = 136
+    Top = 16
+  end
+  object fdtbCliente: TFDTable
+    Filtered = True
+    FilterOptions = [foCaseInsensitive, foNoPartialCompare]
+    IndexFieldNames = 'c_id'
+    Connection = fdConexao
+    UpdateOptions.UpdateTableName = 'cantina.c_cliente'
+    TableName = 'cantina.c_cliente'
+    Left = 624
+    Top = 16
+    object fdtbClientec_id: TFDAutoIncField
+      Alignment = taLeftJustify
+      DisplayLabel = 'ID'
+      FieldName = 'c_id'
+      Origin = 'c_id'
+      ReadOnly = True
+    end
+    object fdtbClientec_nome: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'c_nome'
+      LookupDataSet = fdtbFuncionario
+      Origin = 'c_nome'
+      Required = True
+      Size = 80
+    end
+    object fdtbClientec_sexo: TStringField
+      DisplayLabel = 'Sexo'
+      FieldName = 'c_sexo'
+      Origin = 'c_sexo'
+      FixedChar = True
+      Size = 1
+    end
+    object fdtbClientec_email: TStringField
+      DisplayLabel = 'Email'
+      FieldName = 'c_email'
+      Origin = 'c_email'
+      Required = True
+      Size = 80
+    end
+    object fdtbClientec_senha: TStringField
+      DisplayLabel = 'Senha'
+      FieldName = 'c_senha'
+      Origin = 'c_senha'
+      Required = True
+      Size = 80
+    end
+    object fdtbClientec_curso: TStringField
+      DisplayLabel = 'Curso'
+      FieldName = 'c_curso'
+      Origin = 'c_curso'
+      Size = 100
+    end
+    object fdtbClientec_escola: TStringField
+      DisplayLabel = 'Escola'
+      FieldName = 'c_escola'
+      Origin = 'c_escola'
+      Size = 90
+    end
+    object fdtbClientec_ativo: TStringField
+      Alignment = taCenter
+      DisplayLabel = 'Ativo'
+      FieldName = 'c_ativo'
+      Origin = 'c_ativo'
+      Required = True
+      FixedChar = True
+      Size = 1
+    end
+    object fdtbClientec_data_cadastro: TDateTimeField
+      Alignment = taCenter
+      DisplayLabel = 'Data Cadastro'
+      FieldName = 'c_data_cadastro'
+      Origin = 'c_data_cadastro'
+      DisplayFormat = 'dd/mm/yyyy - hh:nn:ss'
+      EditMask = '!99/99/00;1;_'
+    end
+    object fdtbClientec_data_inativo: TDateTimeField
+      Alignment = taCenter
+      DisplayLabel = 'Data Inativo'
+      FieldName = 'c_data_inativo'
+      Origin = 'c_data_inativo'
+      DisplayFormat = 'dd/mm/yyyy - hh:nn:ss'
+      EditMask = '!99/99/00;1;_'
+    end
+  end
+  object fdtbFuncionario: TFDTable
+    IndexFieldNames = 'f_id'
+    Connection = fdConexao
+    UpdateOptions.UpdateTableName = 'cantina.f_funcionario'
+    TableName = 'cantina.f_funcionario'
+    Left = 704
+    Top = 16
+    object fdtbFuncionariof_id: TFDAutoIncField
+      DisplayLabel = 'ID'
+      FieldName = 'f_id'
+      Origin = 'f_id'
+      ReadOnly = True
+    end
+    object fdtbFuncionariof_nome: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'f_nome'
+      Origin = 'f_nome'
+      Required = True
+      Size = 80
+    end
+    object fdtbFuncionariof_usuario: TStringField
+      DisplayLabel = 'Usuario'
+      FieldName = 'f_usuario'
+      Origin = 'f_usuario'
+      Required = True
+      Size = 10
+    end
+    object fdtbFuncionariof_senha: TStringField
+      DisplayLabel = 'Senha'
+      FieldName = 'f_senha'
+      Origin = 'f_senha'
+      Required = True
+      Size = 80
+    end
+    object fdtbFuncionariof_ativo: TStringField
+      DisplayLabel = 'Ativo'
+      FieldName = 'f_ativo'
+      Origin = 'f_ativo'
+      Required = True
+      FixedChar = True
+      Size = 1
+    end
+    object fdtbFuncionariof_data_cadastro: TDateTimeField
+      Alignment = taCenter
+      DisplayLabel = 'Data Cadastro'
+      FieldName = 'f_data_cadastro'
+      Origin = 'f_data_cadastro'
+      DisplayFormat = 'dd/mm/yyyy - hh:nn:ss'
+      EditMask = '!99/99/00;1;_'
+    end
+    object fdtbFuncionariof_data_inativo: TDateTimeField
+      Alignment = taCenter
+      DisplayLabel = 'Data Inativo'
+      FieldName = 'f_data_inativo'
+      Origin = 'f_data_inativo'
+      DisplayFormat = 'dd/mm/yyyy - hh:nn:ss'
+      EditMask = '!99/99/00;1;_'
+    end
+  end
+  object fdtbProduto: TFDTable
+    IndexFieldNames = 'p_id'
+    Connection = fdConexao
+    UpdateOptions.UpdateTableName = 'cantina.p_produto'
+    TableName = 'cantina.p_produto'
+    Left = 792
+    Top = 16
+    object fdtbProdutop_id: TLargeintField
+      DisplayLabel = 'ID'
+      FieldName = 'p_id'
+      Origin = 'p_id'
+      Required = True
+    end
+    object fdtbProdutop_nome: TStringField
+      DisplayLabel = 'Produto'
+      FieldName = 'p_nome'
+      Origin = 'p_nome'
+      Required = True
+      Size = 80
+    end
+    object fdtbProdutop_foto: TBlobField
+      DisplayLabel = 'Foto'
+      FieldName = 'p_foto'
+      Origin = 'p_foto'
+    end
+    object fdtbProdutop_preco: TFloatField
+      DisplayLabel = 'Pre'#231'o'
+      FieldName = 'p_preco'
+      Origin = 'p_preco'
+      Required = True
+      currency = True
+    end
+    object fdtbProdutop_custo: TFloatField
+      DisplayLabel = 'Custo'
+      FieldName = 'p_custo'
+      Origin = 'p_custo'
+      currency = True
+    end
+    object fdtbProdutop_quantidade: TLongWordField
+      DisplayLabel = 'Quantidade'
+      FieldName = 'p_quantidade'
+      Origin = 'p_quantidade'
+      Required = True
+    end
+    object fdtbProdutop_qtd_alerta: TLongWordField
+      DisplayLabel = 'Alerta Reposi'#231#227'o'
+      FieldName = 'p_qtd_alerta'
+      Origin = 'p_qtd_alerta'
+    end
+    object fdtbProdutop_ativo: TStringField
+      Alignment = taCenter
+      DisplayLabel = 'Ativo'
+      FieldName = 'p_ativo'
+      Origin = 'p_ativo'
+      Required = True
+      FixedChar = True
+      Size = 1
+    end
+    object fdtbProdutop_data_cadastro: TDateTimeField
+      Alignment = taCenter
+      DisplayLabel = 'Data Cadastro'
+      FieldName = 'p_data_cadastro'
+      Origin = 'p_data_cadastro'
+      DisplayFormat = 'dd/mm/yyyy - hh:nn:ss'
+      EditMask = '!99/99/00;1;_'
+    end
+    object fdtbProdutop_data_inativo: TDateTimeField
+      Alignment = taCenter
+      DisplayLabel = 'Data Inativo'
+      FieldName = 'p_data_inativo'
+      Origin = 'p_data_inativo'
+      DisplayFormat = 'dd/mm/yyyy - hh:nn:ss'
+      EditMask = '!99/99/00;1;_'
+    end
+  end
+  object fdtbVenda: TFDTable
+    FilterOptions = [foCaseInsensitive]
+    IndexFieldNames = 'v_id;v_cliente'
+    Connection = fdConexao
+    FetchOptions.AssignedValues = [evDetailCascade]
+    UpdateOptions.AssignedValues = [uvCheckReadOnly]
+    UpdateOptions.UpdateTableName = 'cantina.v_venda'
+    TableName = 'cantina.v_venda'
+    Left = 872
+    Top = 16
+    object fdtbVendav_id: TLargeintField
+      AutoGenerateValue = arAutoInc
+      DisplayLabel = 'ID'
+      FieldName = 'v_id'
+      Origin = 'v_id'
+      ProviderFlags = [pfInWhere]
+    end
+    object fdtbVendav_cliente: TLongWordField
+      DisplayLabel = 'Cliente'
+      FieldName = 'v_cliente'
+      Origin = 'v_cliente'
+      Required = True
+    end
+    object fdtbVendav_caixa: TLongWordField
+      DisplayLabel = 'Caixa'
+      FieldName = 'v_caixa'
+      Origin = 'v_caixa'
+    end
+    object fdtbVendav_atendente: TLongWordField
+      DisplayLabel = 'Atendente'
+      FieldName = 'v_atendente'
+      Origin = 'v_atendente'
+    end
+    object fdtbVendav_status: TStringField
+      FieldName = 'v_status'
+      Origin = 'v_status'
+      FixedChar = True
+      Size = 9
+    end
+    object fdtbVendav_total: TFloatField
+      DisplayLabel = 'Total'
+      FieldName = 'v_total'
+      Origin = 'v_total'
+      currency = True
+    end
+    object fdtbVendav_forma_pagamento: TStringField
+      DisplayLabel = 'Forma Pagamento'
+      FieldName = 'v_forma_pagamento'
+      Origin = 'v_forma_pagamento'
+      FixedChar = True
+      Size = 8
+    end
+    object fdtbVendav_origem: TStringField
+      DisplayLabel = 'Origem'
+      FieldName = 'v_origem'
+      Origin = 'v_origem'
+      FixedChar = True
+      Size = 8
+    end
+    object fdtbVendav_data_consumo: TDateTimeField
+      DisplayLabel = 'Data Consumo'
+      FieldName = 'v_data_consumo'
+      Origin = 'v_data_consumo'
+      DisplayFormat = 'dd/mm/yyyy - hh:nn:ss'
+      EditMask = '!99/99/00;1;_'
+    end
+    object fdtbVendav_data: TDateTimeField
+      DisplayLabel = 'Data'
+      FieldName = 'v_data'
+      Origin = 'v_data'
+      Required = True
+      DisplayFormat = 'dd/mm/yyyy - hh:nn:ss'
+      EditMask = '!99/99/00;1;_'
+    end
+    object fdtbVendav_data_devolucao: TDateTimeField
+      DisplayLabel = 'Data Devolu'#231#227'o'
+      FieldName = 'v_data_devolucao'
+      Origin = 'v_data_devolucao'
+      DisplayFormat = 'dd/mm/yyyy - hh:nn:ss'
+      EditMask = '!99/99/00;1;_'
+    end
+  end
+  object fdClienteQuery: TFDQuery
+    Active = True
+    CachedUpdates = True
+    Connection = fdConexao
+    UpdateObject = updClient
+    SQL.Strings = (
+      'SELECT '
+      '    cli.c_id, '
+      '    cli.c_nome,'
+      '    cli.c_sexo,'
+      '    cli.c_email,'
+      '    cli.c_senha,'
+      '    cli.c_curso,'
+      '    cli.c_escola,'
+      '    cli.c_ativo,'
+      '    cli.c_data_cadastro,'
+      '    cli.c_data_inativo,'
+      '    co.co_cliente,'
+      '    co.co_saldo'
+      'FROM'
+      '    c_cliente cli, co_conta co'
+      'WHERE'
+      '    co.co_cliente = cli.c_id AND'
+      '    cli.c_ativo = '#39'S'#39)
+    Left = 776
+    Top = 128
+    object fdClienteQueryc_id: TFDAutoIncField
+      DisplayLabel = 'ID'
+      FieldName = 'c_id'
+      Origin = 'c_id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object fdClienteQueryc_nome: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'c_nome'
+      Origin = 'c_nome'
+      Required = True
+      Size = 80
+    end
+    object fdClienteQueryc_sexo: TStringField
+      DisplayLabel = 'Sexo'
+      FieldName = 'c_sexo'
+      Origin = 'c_sexo'
+      FixedChar = True
+      Size = 1
+    end
+    object fdClienteQueryc_email: TStringField
+      DisplayLabel = 'E-mail'
+      FieldName = 'c_email'
+      Origin = 'c_email'
+      Required = True
+      Size = 80
+    end
+    object fdClienteQueryc_senha: TStringField
+      DisplayLabel = 'Senha'
+      FieldName = 'c_senha'
+      Origin = 'c_senha'
+      Required = True
+      Size = 80
+    end
+    object fdClienteQueryc_curso: TStringField
+      DisplayLabel = 'Curso'
+      FieldName = 'c_curso'
+      Origin = 'c_curso'
+      Size = 100
+    end
+    object fdClienteQueryc_escola: TStringField
+      DisplayLabel = 'Escola'
+      FieldName = 'c_escola'
+      Origin = 'c_escola'
+      Size = 90
+    end
+    object fdClienteQueryc_ativo: TStringField
+      DisplayLabel = 'Ativo'
+      FieldName = 'c_ativo'
+      Origin = 'c_ativo'
+      Required = True
+      FixedChar = True
+      Size = 1
+    end
+    object fdClienteQueryc_data_cadastro: TDateTimeField
+      DisplayLabel = 'Data Cadastro'
+      FieldName = 'c_data_cadastro'
+      Origin = 'c_data_cadastro'
+      DisplayFormat = 'dd/mm/yyyy - hh:nn:ss'
+    end
+    object fdClienteQueryc_data_inativo: TDateTimeField
+      DisplayLabel = 'Data Inativo'
+      FieldName = 'c_data_inativo'
+      Origin = 'c_data_inativo'
+      DisplayFormat = 'dd/mm/yyyy - hh:nn:ss'
+    end
+    object fdClienteQueryco_saldo: TFloatField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Saldo da Conta'
+      FieldName = 'co_saldo'
+      Origin = 'co_saldo'
+      ProviderFlags = []
+      currency = True
+    end
+  end
+  object updClient: TFDUpdateSQL
+    Connection = fdConexao
+    ModifySQL.Strings = (
+      'UPDATE cantina.co_conta'
+      'SET co_saldo = :new_co_saldo'
+      'WHERE co_cliente = :old_co_cliente')
+    Left = 856
+    Top = 128
+  end
+  object fdqueryVendaItem: TFDQuery
+    CachedUpdates = True
+    IndexFieldNames = 'vi_venda'
+    MasterSource = dsVenda
+    MasterFields = 'v_id'
+    Connection = fdConexao
+    UpdateObject = updVendaItem
+    SQL.Strings = (
+      'SELECT '
+      '  VI.*,'
+      ' P.P_NOME,'
+      ' P.P_PRECO,'
+      ' P.P_QUANTIDADE'
+      'FROM'
+      ' VI_VENDA_ITEM VI, '
+      ' P_PRODUTO P'
+      'WHERE'
+      ' VI.VI_PRODUTO = P.P_ID')
+    Left = 584
+    Top = 240
+    object fdqueryVendaItemvi_id: TLargeintField
+      AutoGenerateValue = arAutoInc
+      DisplayLabel = 'ID'
+      FieldName = 'vi_id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      Required = True
+    end
+    object fdqueryVendaItemvi_produto: TLargeintField
+      DisplayLabel = 'IDProduto'
+      FieldName = 'vi_produto'
+      Required = True
+    end
+    object fdqueryVendaItemvi_cliente: TLongWordField
+      DisplayLabel = 'IDCliente'
+      FieldName = 'vi_cliente'
+      Required = True
+    end
+    object fdqueryVendaItemvi_venda: TLargeintField
+      DisplayLabel = 'IDVenda'
+      FieldName = 'vi_venda'
+      Required = True
+    end
+    object fdqueryVendaItemvi_valor: TFloatField
+      DisplayLabel = 'Valor'
+      FieldName = 'vi_valor'
+      Required = True
+    end
+    object fdqueryVendaItemvi_quantidade: TLongWordField
+      DisplayLabel = 'Quantidade'
+      FieldName = 'vi_quantidade'
+      Required = True
+    end
+    object fdqueryVendaItemvi_status: TStringField
+      DisplayLabel = 'Situa'#231#227'o'
+      FieldName = 'vi_status'
+      Required = True
+      FixedChar = True
+      Size = 9
+    end
+    object fdqueryVendaItemvi_prod_trocado: TLongWordField
+      DisplayLabel = 'Trocado'
+      FieldName = 'vi_prod_trocado'
+    end
+    object fdqueryVendaItemvi_total: TFloatField
+      DisplayLabel = 'Total'
+      FieldName = 'vi_total'
+      currency = True
+    end
+    object fdqueryVendaItemP_NOME: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Nome'
+      FieldName = 'P_NOME'
+      ProviderFlags = []
+      Size = 80
+    end
+    object fdqueryVendaItemP_PRECO: TFloatField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Pre'#231'o'
+      FieldName = 'P_PRECO'
+      ProviderFlags = []
+      currency = True
+    end
+    object fdqueryVendaItemP_QUANTIDADE: TLongWordField
+      DisplayLabel = 'Estoque'
+      FieldName = 'P_QUANTIDADE'
+    end
+  end
+  object updVendaItem: TFDUpdateSQL
+    Connection = fdConexao
+    InsertSQL.Strings = (
+      'INSERT INTO cantina.vi_venda_item'
+      '(vi_produto, vi_cliente, vi_venda, vi_valor, '
+      '  vi_quantidade, vi_total, vi_status, vi_prod_trocado)'
+      
+        'VALUES (:new_vi_produto, :new_vi_cliente, :new_vi_venda, :new_vi' +
+        '_valor, '
+      
+        '  :new_vi_quantidade, :new_vi_total, :new_vi_status, :new_vi_pro' +
+        'd_trocado)')
+    ModifySQL.Strings = (
+      'UPDATE cantina.vi_venda_item'
+      'SET vi_produto = :new_vi_produto, vi_cliente = :new_vi_cliente, '
+      
+        '  vi_venda = :new_vi_venda, vi_valor = :new_vi_valor, vi_quantid' +
+        'ade = :new_vi_quantidade, '
+      
+        '  vi_total = :new_vi_total, vi_status = :new_vi_status, vi_prod_' +
+        'trocado = :new_vi_prod_trocado'
+      
+        'WHERE vi_id = :old_vi_id AND vi_produto = :old_vi_produto AND vi' +
+        '_cliente = :old_vi_cliente AND '
+      '  vi_venda = :old_vi_venda')
+    DeleteSQL.Strings = (
+      'DELETE FROM cantina.vi_venda_item'
+      
+        'WHERE vi_id = :old_vi_id AND vi_produto = :old_vi_produto AND vi' +
+        '_cliente = :old_vi_cliente AND '
+      '  vi_venda = :old_vi_venda')
+    FetchRowSQL.Strings = (
+      
+        'SELECT LAST_INSERT_ID() AS vi_id, vi_produto, vi_cliente, vi_ven' +
+        'da, '
+      '  vi_valor, vi_quantidade, vi_total, vi_status, vi_prod_trocado'
+      'FROM cantina.vi_venda_item'
+      
+        'WHERE vi_id = :vi_id AND vi_produto = :vi_produto AND vi_cliente' +
+        ' = :vi_cliente AND '
+      '  vi_venda = :vi_venda')
+    Left = 688
+    Top = 240
+  end
+  object dsVenda: TDataSource
+    DataSet = fdtbVenda
+    Left = 888
+    Top = 240
+  end
+  object readonlyProduto: TFDQuery
+    FilterOptions = [foCaseInsensitive, foNoPartialCompare]
+    Connection = fdConexao
+    SQL.Strings = (
+      'SELECT * FROM P_PRODUTO WHERE P_ATIVO = '#39'S'#39)
+    Left = 792
+    Top = 240
+    object readonlyProdutop_id: TLargeintField
+      DisplayLabel = 'ID'
+      FieldName = 'p_id'
+      Origin = 'p_id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object readonlyProdutop_nome: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'p_nome'
+      Origin = 'p_nome'
+      Required = True
+      Size = 80
+    end
+    object readonlyProdutop_foto: TBlobField
+      DisplayLabel = 'Foto'
+      FieldName = 'p_foto'
+      Origin = 'p_foto'
+    end
+    object readonlyProdutop_preco: TFloatField
+      DisplayLabel = 'Pre'#231'o'
+      FieldName = 'p_preco'
+      Origin = 'p_preco'
+      Required = True
+      currency = True
+    end
+    object readonlyProdutop_custo: TFloatField
+      DisplayLabel = 'Custo'
+      FieldName = 'p_custo'
+      Origin = 'p_custo'
+      currency = True
+    end
+    object readonlyProdutop_quantidade: TLongWordField
+      DisplayLabel = 'Quantidade'
+      FieldName = 'p_quantidade'
+      Origin = 'p_quantidade'
+      Required = True
+    end
+    object readonlyProdutop_qtd_alerta: TLongWordField
+      DisplayLabel = 'Alerta'
+      FieldName = 'p_qtd_alerta'
+      Origin = 'p_qtd_alerta'
+    end
+    object readonlyProdutop_ativo: TStringField
+      DisplayLabel = 'Ativo'
+      FieldName = 'p_ativo'
+      Origin = 'p_ativo'
+      Required = True
+      FixedChar = True
+      Size = 1
+    end
+    object readonlyProdutop_data_cadastro: TDateTimeField
+      DisplayLabel = 'Data Cadastro'
+      FieldName = 'p_data_cadastro'
+      Origin = 'p_data_cadastro'
+      DisplayFormat = 'dd/mm/yyyy - hh:nn:ss'
+    end
+    object readonlyProdutop_data_inativo: TDateTimeField
+      DisplayLabel = 'Data Inativo'
+      FieldName = 'p_data_inativo'
+      Origin = 'p_data_inativo'
+      DisplayFormat = 'dd/mm/yyyy - hh:nn:ss'
+    end
+  end
+  object qrCalculaTotal: TFDQuery
+    Connection = fdConexao
+    UpdateOptions.AssignedValues = [uvEDelete, uvEInsert, uvEUpdate]
+    UpdateOptions.EnableDelete = False
+    UpdateOptions.EnableInsert = False
+    UpdateOptions.EnableUpdate = False
+    SQL.Strings = (
+      'SELECT'
+      '    sum(vi_total) as Total'
+      'FROM'
+      '    vi_venda_item'
+      'WHERE'
+      '    vi_venda =:idvenda'
+      '')
+    Left = 792
+    Top = 344
+    ParamData = <
+      item
+        Name = 'IDVENDA'
+        DataType = ftLargeint
+        ParamType = ptInput
+        Value = 0
+      end>
+  end
+end

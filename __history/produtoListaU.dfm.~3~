@@ -1,0 +1,10 @@
+inherited frmProdutoListaU: TfrmProdutoListaU
+  Caption = 'Lista de Produtos'
+  ExplicitWidth = 750
+  ExplicitHeight = 480
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited ds: TDataSource
+    DataSet = dmCantina.fdtbProduto
+  end
+end

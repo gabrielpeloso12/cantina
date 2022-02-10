@@ -1,0 +1,155 @@
+unit principalU;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ToolWin, Vcl.ComCtrls,
+  System.ImageList, Vcl.ImgList, System.Actions, Vcl.ActnList, FireDAC.UI.Intf,
+  FireDAC.VCLUI.Wait, FireDAC.Stan.Intf, FireDAC.Comp.UI;
+
+type
+    TfrmPrincipal = class(TForm)
+    mmPrincipal: TMainMenu;
+    Arquivo1: TMenuItem;
+    Cadastro1: TMenuItem;
+    Venda1: TMenuItem;
+    Sair1: TMenuItem;
+    Cliente1: TMenuItem;
+    cadFuncionario: TMenuItem;
+    Produto1: TMenuItem;
+    Relatrios1: TMenuItem;
+    Clientes1: TMenuItem;
+    Produtos1: TMenuItem;
+    Vendas1: TMenuItem;
+    Ajuda1: TMenuItem;
+    Sobre1: TMenuItem;
+    sbPrincipal: TStatusBar;
+    tbPrincipal: TToolBar;
+    ilPrincipal48: TImageList;
+    ilPrincipal20: TImageList;
+    acPrincipal: TActionList;
+    acCadCliente: TAction;
+    acCadFuncionario: TAction;
+    acCadProduto: TAction;
+    acVenda: TAction;
+    acRelCliente: TAction;
+    acRelProduto: TAction;
+    acRelVenda: TAction;
+    acSair: TAction;
+    acSobre: TAction;
+    ToolButton1: TToolButton;
+    ToolButton2: TToolButton;
+    ToolButton3: TToolButton;
+    ToolButton4: TToolButton;
+    ToolButton5: TToolButton;
+    ToolButton6: TToolButton;
+    ToolButton7: TToolButton;
+    ToolButton8: TToolButton;
+    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    acDepositoConta: TAction;
+    ToolButton9: TToolButton;
+    procedure acCadClienteExecute(Sender: TObject);
+    procedure cadFuncionarioClick(Sender: TObject);
+    procedure acCadProdutoExecute(Sender: TObject);
+    procedure acDepositoContaExecute(Sender: TObject);
+    procedure acVendaExecute(Sender: TObject);
+    procedure acRelClienteExecute(Sender: TObject);
+  private
+    { Private declarations }
+  public
+
+    procedure abreForm(Classe : TformClass);
+    function buscaForm(Classe : TformClass): TForm;
+
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+{$R *.dfm}
+
+  uses clienteListaU, funcionarioListaU, produtoListaU, clienteDadosU, funcionarioDadosU, produtoDadosU, identificaClienteU, pontoVendaU, identificaClientePDVU, fastReportClienteU;
+
+procedure TfrmPrincipal.abreForm(Classe: TformClass);
+var
+    I : integer;
+begin
+
+    for I := 0 to MDIChildCount -1 do
+    begin
+      if MDIChildren[I] is Classe then // se formulário já está aberto
+      begin
+           if MDIChildren[I].WindowState = wsMinimized then
+           begin
+                MDIChildren[i].WindowState := wsNormal;
+           end;
+
+           MDIChildren[i].BringToFront;  // traz o formulário para frente
+           MDIChildren[i];SetFocus;      // joga o foco no formulário
+           Exit;       // sai da função
+      end; //encerra o if que define se o formulário requerido foi aberto ou não
+
+    end; // encerra o for que percorre todos os formularios abertos no sistema
+
+    Classe.Create(Application); // abre o formulário (caso não tenha sido aberto antes)
+
+end;
+
+procedure TfrmPrincipal.acCadClienteExecute(Sender: TObject);
+
+begin
+   abreForm(TfrmClienteListaU);
+end;
+
+procedure TfrmPrincipal.acCadProdutoExecute(Sender: TObject);
+begin
+    abreForm(TfrmProdutoListaU);
+end;
+
+procedure TfrmPrincipal.acDepositoContaExecute(Sender: TObject);
+begin
+    abreForm(TfrmIdentificaConta);
+end;
+
+procedure TfrmPrincipal.acRelClienteExecute(Sender: TObject);
+var
+    path : string;
+begin
+    path := ExtractFilePath(Application.ExeName);
+    frmRelatorio.frxCliente.LoadFromFile(path+'relCliente.fr3');
+end;
+
+procedure TfrmPrincipal.acVendaExecute(Sender: TObject);
+begin
+    abreForm(TfrmPontoVenda);
+end;
+
+function TfrmPrincipal.buscaForm(Classe: TformClass): TForm;
+var
+    I : integer;
+begin
+
+    for I := 0 to MDIChildCount -1 do
+    begin
+      if MDIChildren[I] is Classe then // se formulário já está aberto
+      begin
+         result := MDIChildren[I];
+         exit;
+      end; //encerra o if que define se o formulário requerido foi aberto ou não
+
+    end; // encerra o for que percorre todos os formularios abertos no sistema
+
+        MessageBox(Application.Handle, Pchar('Formulario não encontrado!'), Pchar('Buscar de formulario'), MB_OK+MB_ICONINFORMATION);
+
+
+end;
+
+procedure TfrmPrincipal.cadFuncionarioClick(Sender: TObject);
+
+begin
+    abreForm(TfrmFuncionarioListaU);
+end;
+
+end.

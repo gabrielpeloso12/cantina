@@ -1,0 +1,27 @@
+unit produtoListaU;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, modeloListaU, Data.DB, Vcl.ExtCtrls,
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TfrmProdutoListaU = class(TfrmModeloLista)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmProdutoListaU: TfrmProdutoListaU;
+
+implementation
+
+{$R *.dfm}
+
+uses dmU, produtoDadosU;
+
+end.

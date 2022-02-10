@@ -1,0 +1,7 @@
+Arquivos utilizados no Projeto da Cantina. Projeto interdisciplinar desenvolvido pelos alunos da ETEC João B. de Lima Figueiredo (Eletrô Mococa) sob as orientações do professor Maicon Pires na disciplina de Programação de Computadores II.
+A pasta contém:
+* 4 subpastas com as imagens utilizadas, em tamanhos e formatos diferentes;
+* 6 fotos de produtos e código de barras para realizar teste de cadastros;
+* Diagrama Entidade Relacionamento do banco de dados (para ser aberto com DBDesigner 4);
+* Software para conversão de imagens, utilizado para converter e formatar os Glyphs;
+* 2 Arquivos de scripts para criar a base de dados no servidor MySQL;

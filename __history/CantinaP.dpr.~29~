@@ -1,0 +1,26 @@
+program CantinaP;
+
+uses
+  Vcl.Forms,
+  principalU in 'principalU.pas' {frmPrincipal},
+  dmU in 'dmU.pas' {dmCantina: TDataModule},
+  modeloListaU in 'modeloListaU.pas' {frmModeloLista},
+  clienteListaU in 'clienteListaU.pas' {frmClienteListaU},
+  modeloDadosU in 'modeloDadosU.pas' {frmModeloDados},
+  clienteDadosU in 'clienteDadosU.pas' {frmClienteDados},
+  funcionarioListaU in 'funcionarioListaU.pas' {frmFuncionarioListaU},
+  funcionarioDadosU in 'funcionarioDadosU.pas' {frmFuncionarioDados},
+  produtoListaU in 'produtoListaU.pas' {frmProdutoListaU},
+  produtoDadosU in 'produtoDadosU.pas' {frmProdutoDados},
+  identificaClienteU in 'identificaClienteU.pas' {frmIdentificaConta},
+  NovoDepositoU in 'NovoDepositoU.pas' {frmDeposito};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TdmCantina, dmCantina);
+  Application.Run;
+end.

@@ -1,0 +1,252 @@
+inherited frmProdutoDados: TfrmProdutoDados
+  Caption = 'Dados do Produto'
+  ExplicitWidth = 737
+  ExplicitHeight = 445
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited gbDados: TGroupBox
+    ExplicitWidth = 721
+    ExplicitHeight = 326
+    object Panel1: TPanel
+      Left = 2
+      Top = 15
+      Width = 420
+      Height = 309
+      Align = alLeft
+      BevelOuter = bvNone
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 32
+        Top = 24
+        Width = 15
+        Height = 13
+        Caption = 'ID:'
+        FocusControl = dbeID
+      end
+      object Label2: TLabel
+        Left = 275
+        Top = 24
+        Width = 29
+        Height = 13
+        Caption = 'Ativo:'
+      end
+      object Label3: TLabel
+        Left = 32
+        Top = 80
+        Width = 42
+        Height = 13
+        Caption = 'Produto:'
+        FocusControl = dbeProduto
+      end
+      object Label4: TLabel
+        Left = 32
+        Top = 134
+        Width = 78
+        Height = 13
+        Caption = 'Estoque Min'#237'mo:'
+        FocusControl = dbeEstoqueMinimo
+      end
+      object Label5: TLabel
+        Left = 208
+        Top = 134
+        Width = 60
+        Height = 13
+        Caption = 'Quantidade:'
+        FocusControl = dbeQuantidade
+      end
+      object Label6: TLabel
+        Left = 32
+        Top = 192
+        Width = 32
+        Height = 13
+        Caption = 'Custo:'
+        FocusControl = dbeCusto
+      end
+      object Label7: TLabel
+        Left = 208
+        Top = 192
+        Width = 31
+        Height = 13
+        Caption = 'Pre'#231'o:'
+        FocusControl = dbePreco
+      end
+      object Label8: TLabel
+        Left = 32
+        Top = 248
+        Width = 74
+        Height = 13
+        Caption = 'Data Cadastro:'
+        FocusControl = dbeDataCadastro
+      end
+      object Label9: TLabel
+        Left = 208
+        Top = 248
+        Width = 64
+        Height = 13
+        Caption = 'Data Inativo:'
+        FocusControl = dbeDataInativo
+      end
+      object dbeID: TDBEdit
+        Left = 32
+        Top = 43
+        Width = 199
+        Height = 21
+        TabStop = False
+        CharCase = ecUpperCase
+        DataField = 'p_id'
+        DataSource = ds
+        TabOrder = 0
+      end
+      object dbeProduto: TDBEdit
+        Left = 32
+        Top = 99
+        Width = 310
+        Height = 21
+        CharCase = ecUpperCase
+        DataField = 'p_nome'
+        DataSource = ds
+        TabOrder = 2
+      end
+      object dbeEstoqueMinimo: TDBEdit
+        Left = 32
+        Top = 153
+        Width = 134
+        Height = 21
+        CharCase = ecUpperCase
+        DataField = 'p_qtd_alerta'
+        DataSource = ds
+        TabOrder = 3
+      end
+      object dbeQuantidade: TDBEdit
+        Left = 208
+        Top = 153
+        Width = 134
+        Height = 21
+        CharCase = ecUpperCase
+        DataField = 'p_quantidade'
+        DataSource = ds
+        TabOrder = 4
+      end
+      object dbeCusto: TDBEdit
+        Left = 32
+        Top = 211
+        Width = 134
+        Height = 21
+        CharCase = ecUpperCase
+        DataField = 'p_custo'
+        DataSource = ds
+        TabOrder = 5
+      end
+      object dbePreco: TDBEdit
+        Left = 208
+        Top = 211
+        Width = 134
+        Height = 21
+        CharCase = ecUpperCase
+        DataField = 'p_preco'
+        DataSource = ds
+        TabOrder = 6
+      end
+      object dbeDataCadastro: TDBEdit
+        Left = 32
+        Top = 267
+        Width = 134
+        Height = 21
+        TabStop = False
+        CharCase = ecUpperCase
+        DataField = 'p_data_cadastro'
+        DataSource = ds
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 7
+      end
+      object dbeDataInativo: TDBEdit
+        Left = 208
+        Top = 267
+        Width = 134
+        Height = 21
+        TabStop = False
+        CharCase = ecUpperCase
+        DataField = 'p_data_inativo'
+        DataSource = ds
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 8
+      end
+      object dbcAtivo: TDBComboBox
+        Left = 275
+        Top = 43
+        Width = 67
+        Height = 21
+        CharCase = ecUpperCase
+        DataField = 'p_ativo'
+        DataSource = ds
+        Items.Strings = (
+          'S'
+          'N')
+        TabOrder = 1
+      end
+    end
+    object Panel2: TPanel
+      Left = 422
+      Top = 15
+      Width = 297
+      Height = 309
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 1
+      object gbFoto: TGroupBox
+        Left = 0
+        Top = 0
+        Width = 297
+        Height = 309
+        Align = alClient
+        Caption = 'Foto:'
+        TabOrder = 0
+        object imProduto: TImage
+          Left = 2
+          Top = 15
+          Width = 293
+          Height = 292
+          Align = alClient
+          Proportional = True
+          Stretch = True
+          ExplicitLeft = 96
+          ExplicitTop = 168
+          ExplicitWidth = 105
+          ExplicitHeight = 105
+        end
+      end
+    end
+  end
+  inherited pnControle: TPanel
+    ExplicitTop = 326
+    ExplicitWidth = 721
+    inherited btnFechar: TBitBtn
+      ExplicitLeft = 634
+      ExplicitTop = 2
+    end
+    inherited btnCancelar: TBitBtn
+      ExplicitLeft = 543
+    end
+    inherited btnSalvar: TBitBtn
+      ExplicitTop = 2
+    end
+  end
+  inherited ds: TDataSource
+    DataSet = dmCantina.fdtbProduto
+    OnDataChange = dsDataChange
+    Left = 392
+    Top = 329
+  end
+end

@@ -1,0 +1,54 @@
+unit NovoDepositoU;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TfrmDeposito = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Label1: TLabel;
+    edtValor: TEdit;
+    btnCancelar: TBitBtn;
+    btnDepositar: TBitBtn;
+    procedure btnDepositarClick(Sender: TObject);
+    procedure edtValorKeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmDeposito: TfrmDeposito;
+
+implementation
+
+{$R *.dfm}
+
+uses dmU;
+
+procedure TfrmDeposito.btnDepositarClick(Sender: TObject);
+var
+      deposito : real;
+begin
+
+      deposito := StrToFloat (edtValor.Text);
+
+      dmCantina.fdClienteQuery.Edit;
+      dmCantina.fdClienteQueryco_saldo.Value := dmCantina.fdClienteQueryco_saldo.Value +  deposito;
+      dmCantina.fdClienteQuery.Post;
+end;
+
+procedure TfrmDeposito.edtValorKeyPress(Sender: TObject; var Key: Char);
+begin
+      if not (key in ['0' .. '9', char (28)]) then
+      begin
+        key := #0;
+      end;
+end;
+
+end.
